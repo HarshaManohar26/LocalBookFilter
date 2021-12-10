@@ -36,8 +36,7 @@ class BookViewModel(application: Application): AndroidViewModel(application) {
 
         viewModelScope.launch(Dispatchers.IO) {
 
-            val jsonRes = httpApiService.getAllBooks()     //http req here
-
+            val jsonRes = httpApiService.getAllBooks()
             for (books in jsonRes) {
                 val book = Book(
                     0,

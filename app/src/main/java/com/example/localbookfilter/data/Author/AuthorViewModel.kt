@@ -31,7 +31,7 @@ class AuthorViewModel(application: Application): AndroidViewModel(application) {
     fun insertData(myAuthorViewModel: AuthorViewModel, httpApiService: HttpApiService){
         viewModelScope.launch(Dispatchers.IO) {
 
-            val jsonRes = httpApiService.getAllBooks()     //http req here
+            val jsonRes = httpApiService.getAllBooks()
 
             for (books in jsonRes) {
                 val author = Author(0, books.author, books.country)
